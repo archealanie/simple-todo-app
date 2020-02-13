@@ -1,7 +1,6 @@
 React JS Simple Todo App
+by: Archeal Anie Jr.'
 
-Build through: Create React App
+Build through: 
+Create React App: https://github.com/facebook/create-react-app
 
-Made by: Archeal Anie Jr.
-
-github: https://github.com/archealanie
