@@ -5,6 +5,9 @@ class Todos extends Component{
 
     render() {
         const { todoList, newTask, onAdd, onChanges, onFinish, onDelete } = this.props
+
+        const hasTodo = (todoList.length !== 0);
+
         return (
             <React.Fragment>
 
@@ -15,16 +18,20 @@ class Todos extends Component{
                     <input type="text" className="form-control" value={newTask.task} onChange={ onChanges }/>
                 </div>
 
-                <ul className="list-group">
-                    { todoList.map( (todo, index) =>
-                        <Todo
-                            key={index}
-                            todo={todo}
-                            onFinish={onFinish}
-                            onDelete={onDelete}
-                        />
-                    ) }
-                </ul>
+                { hasTodo ? (
+                    <ul className="list-group">
+                        { todoList.map( (todo, index) =>
+                            <Todo
+                                key={index}
+                                todo={todo}
+                                onFinish={onFinish}
+                                onDelete={onDelete}
+                            />
+                        ) }
+                    </ul>
+                ) : (
+                    <div className="alert alert-warning"> No task to do </div>
+                )}
             </React.Fragment>
         )
     }
